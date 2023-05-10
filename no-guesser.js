@@ -16,6 +16,7 @@ maxNum.textContent = max;
 game.addEventListener('mousedown', function(e) {
   if (e.target.className === 'play-again') {
     window.location.reload();
+    guessInput.value = '';
   }
   
 });
@@ -23,30 +24,28 @@ game.addEventListener('mousedown', function(e) {
 game.addEventListener('touchstart', function(e) {
   if (e.target.className === 'play-again') {
     window.location.reload();
+    guessInput.value = '';
+    
   }
 });
 
 guessBtn.addEventListener('click', function() {
   let guess = parseInt(guessInput.value);
 
-  if (isNaN(guess) || guess < min || guess > max) {
+  if (guessInput.value === '') {
+    setMessage('Fill up input', 'rgb(124, 20, 2)');
+  } else if (isNaN(guess) || guess < min || guess > max) {
     setMessage(`Please enter a number between ${min} and ${max}`, 'rgb(124, 20, 2)');
-  }
-
-  if (guess === winingNum) {
+  } else if (guess === winingNum) {
     gameOver(true, `${winingNum} is correct, You Win.`);
-
   } else {
     guessesLeft = guessesLeft - 1;
 
     if (guessesLeft < 0) {
-        guessesLeft = 0;
-        window.location.reload();
-        guessInput.value = ''
-    }
-
-    if (guessesLeft === 0) {
-        
+      guessesLeft = 0;
+      window.location.reload();
+      guessInput.value = ''
+    } else if (guessesLeft === 0) {
       gameOver(false, `Game over, You lost. The correct number was ${winingNum}`);
     } else {
       guessInput.style.borderColor = 'red';
@@ -69,10 +68,9 @@ function gameOver(won, msg) {
   message.style.color = 'white';
   setMessage(msg);
   guessBtn.value = 'Play Again';
-guessBtn.className = 'play-again';
+  guessBtn.className = 'play-again';
 }
 
-
-function getRandomWinningNum(min, max){
-return Math.floor(Math.random()*(max-min+1)+min); 
+function getRandomWinningNum(min, max) {
+  return Math.floor(Math.random()*(max-min+1)+min); 
 }
