@@ -10,12 +10,13 @@ body{
     background-color: orangered;
 }
 
-#guess-value{
-background-color: rgb(126, 128, 129);
-color: rgb(53, 15, 2);
+#guess-input{
+background-color: rgb(255, 233, 222);
+color: rgb(14, 4, 1);
 border-radius: 3px;
+
 }
 
 #guess-btn{
-    background-color: rgb(243, 93, 7); 
+    background-color: rgb(252, 59, 1); 
 }
