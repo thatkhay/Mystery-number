@@ -1,0 +1,17 @@
+body{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url(/—Pngtree—orange\ solid\ color\ shading\ texture_939329.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Bungee', cursive;
+    background-color: orangered;
+}
+
+#guess-value{
+background-color: rgb(126, 128, 129);
+color: rgb(53, 15, 2);
+border-radius: 3px;
+}
