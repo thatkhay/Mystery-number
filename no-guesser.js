@@ -33,11 +33,11 @@ guessBtn.addEventListener('click', function() {
   let guess = parseInt(guessInput.value);
 
   if (guessInput.value === '') {
-    setMessage('Fill up input', 'rgb(124, 20, 2)');
+    setMessage(`Fill up input with a number between ${min} and ${max}`, 'rgb(124, 20, 2)');
   } else if (isNaN(guess) || guess < min || guess > max) {
     setMessage(`Please enter a number between ${min} and ${max}`, 'rgb(124, 20, 2)');
   } else if (guess === winingNum) {
-    gameOver(true, `${winingNum} is correct, You Win.`);
+    gameOver(true, `${winingNum} is correct, You Win !.`);
   } else {
     guessesLeft = guessesLeft - 1;
 
