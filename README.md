@@ -26,6 +26,8 @@ This is a number guesser app
 ## Optimization
 Use javascript frame works
 
+![mysterynumber](https://github.com/thatkhay/Mystery-number/assets/117424081/2b750cbd-3104-421a-822b-d6b606bc971b)
+
 ## Author
 DEV KHAY (That khay)
 
